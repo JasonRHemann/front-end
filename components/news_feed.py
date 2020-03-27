@@ -2,11 +2,11 @@ import requests
 import pandas as pd
 import dash_bootstrap_components as dbc
 import dash_html_components as html
-from app import cache
+# from app import cache
 from utils.settings import NCOV19_API
 
 
-@cache.memoize(timeout=900)
+# @cache.memoize(timeout=900)
 def news_feed(state=None) -> dbc.ListGroup:
     """Displays news feed on the right hand side of the display. Adjust the NewsAPI time
     time to Eastern Time (w/ DST).

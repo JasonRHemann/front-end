@@ -1,13 +1,13 @@
 from typing import List
 import dash_bootstrap_components as dbc
 import dash_html_components as html
-from app import cache
+# from app import cache
 import requests
 from utils.settings import NCOV19_API
 from dateutil.parser import parse
 
 
-@cache.memoize(timeout=900)
+# @cache.memoize(timeout=900)
 def twitter_feed(state=None) -> List[dbc.Card]:
     """Displays twitter feed on the left hand side of the display.
     

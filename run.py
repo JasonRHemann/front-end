@@ -1,8 +1,12 @@
-# Imports from 3rd party libraries
 import re
 import argparse
 import flask
 from flask import request
+from werkzeug.serving import run_simple
+# from werkzeug.wsgi import DispatcherMiddleware
+from werkzeug.middleware.dispatcher import DispatcherMiddleware
+
+# Importing from Plotly Dash
 import dash
 from dash.dependencies import Input, Output
 import dash_core_components as dcc
@@ -74,6 +78,11 @@ def display_page(pathname):
         else:
             return navbar, error_page, footer
 
+# Combining Flask and Dash apps
+application = DispatcherMiddleware(server, {
+    "": app.server,
+})
 
 if __name__ == "__main__":
-    app.run_server(debug=True)
+    run_simple('127.0.0.1', 8050, application)
+    # app.run_server(debug=True)

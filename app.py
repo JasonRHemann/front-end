@@ -23,15 +23,18 @@ app = dash.Dash(
     server=server,
     external_stylesheets=external_stylesheets,
     meta_tags=meta_tags,
+    routes_pathname_prefix="/",
 )
-cache = Cache(
-    app.server,
-    config={
-        "CACHE_TYPE": "filesystem",
-        "CACHE_DEFAULT_TIMEOUT": 3600,
-        "CACHE_DIR": "cache",
-    },
-)
+
+# Flask-caching
+# cache = Cache(
+#     app.server,
+#     config={
+#         "CACHE_TYPE": "filesystem",
+#         "CACHE_DEFAULT_TIMEOUT": 3600,
+#         "CACHE_DIR": "cache",
+#     },
+# )
 
 # TODO: BAD PRACTICE, MOVE IT OUT
 server.secret_key = b'ceb69b2819fc46ebba007cb598e77319'

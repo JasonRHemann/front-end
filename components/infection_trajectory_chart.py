@@ -3,7 +3,7 @@ import requests
 import json
 import plotly.express as px
 import plotly.graph_objects as go
-from app import cache
+# from app import cache
 from utils.settings import NCOV19_API
 
 

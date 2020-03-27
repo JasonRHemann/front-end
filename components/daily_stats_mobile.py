@@ -3,7 +3,7 @@ from typing import List, Dict
 from utils.settings import NCOV19_API
 import dash_bootstrap_components as dbc
 import dash_html_components as html
-from app import cache
+# from app import cache
 
 
 def get_daily_stats() -> Dict:
@@ -39,7 +39,7 @@ def get_daily_stats() -> Dict:
     return stats
 
 
-@cache.memoize(timeout=600)
+# @cache.memoize(timeout=600)
 def daily_stats_mobile() -> List[dbc.Row]:
     """Returns a top bar as a list of Plotly dash components displaying tested, confirmed , and death cases for the top row.
     TODO: move to internal API.

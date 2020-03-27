@@ -3,11 +3,11 @@ import json
 import pandas as pd
 import plotly.express as px
 import plotly.graph_objects as go
-from app import cache
+# from app import cache
 from utils.settings import NCOV19_API
 
 
-@cache.memoize(timeout=3600)
+# @cache.memoize(timeout=3600)
 def confirmed_cases_chart(state=None) -> go.Figure:
     """Bar chart data for the selected state.
 
